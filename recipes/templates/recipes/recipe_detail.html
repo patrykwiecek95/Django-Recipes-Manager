@@ -2,9 +2,16 @@
 {% block content %}
 
 <div>
-    <h1>{{recipe.title}}</h1>
+    <h2>{{recipe.title}}</h2>
     <h2>{{recipe.chef}}</h2>
-    <div>{{recipe.description}} </div>
+    <div>Ingredients:
+        <ul>
+            {% for ingredient in recipe.ingredients.all %}
+                <li>{{ ingredient.name }} - {{ ingredient.quantity }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>Description:{{recipe.description}} </div>
 </div>
 
 {% endblock %}
