@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,9 @@
 <body>
 <h3>Recipes manager</h3>
     {% for recipe in recipes %}
-    {{ recipe }}
+   <h2><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h2>
 {% endfor %}
+ {% block content %}
+{% endblock %}
 </body>
 </html>
