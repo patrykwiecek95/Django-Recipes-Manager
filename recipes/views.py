@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Recipe, Category
+from .models import Recipe, Category, Chef
 from django.shortcuts import get_object_or_404
 
 
@@ -16,3 +16,8 @@ def recipes_detail(request, pk):
 def category_page(request):
     category = Category.objects.all()
     return render(request, 'recipes/category.html', {'category': category})
+
+
+def chef_page(request):
+    chefs = Chef.objects.all()
+    return render(request, 'recipes/chef.html', {'chefs': chefs})

@@ -11,9 +11,11 @@
 <body>
 <h1>Recipes manager</h1>
     {% for recipe in recipes %}
-   <h2><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h2>
+   <h3><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h3>
 {% endfor %}
  {% block content %}
 {% endblock %}
+<h2><a href="{% url 'category'  %}">Category</a></h2>
+<h2><a href="{% url 'chef'  %}">Chefs</a></h2>
 </body>
 </html>
