@@ -1,0 +1,6 @@
+{% extends 'recipes/home.html' %}
+
+{% block content %}
+<h3>Recipe of the Day:</h3>
+<a href="{% url 'recipe_detail' pk=3 %}">{{ random_recipe }}</a>
+{% endblock %}

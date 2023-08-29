@@ -1,0 +1,12 @@
+{% extends 'recipes/home.html' %}
+
+{% block content %}
+<h3>{{category}}</h3>
+{% if recipes %}
+{% for recipe in recipes %}
+   <h3><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h3>
+{% endfor %}
+{% else %}
+No recipes
+{% endif %}
+{% endblock %}

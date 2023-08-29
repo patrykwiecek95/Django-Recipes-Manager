@@ -1,0 +1,8 @@
+{% extends 'recipes/home.html' %}
+
+
+{% block content %}
+{% for recipe in recipes %}
+   <h3><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.title }}</a></h3>
+{% endfor %}
+{% endblock %}
